@@ -3,251 +3,163 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Оформление заказа компьютерной периферии в магазине DeviceHub."
-  >
-
+  <meta name="description" content="Оформление заявки на покупку товаров DeviceHub.">
+  <meta name="color-scheme" content="light dark">
   <title>Оформление заказа — DeviceHub</title>
-
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">
-        DeviceHub
-      </a>
+      <a class="site-header__logo" href="index.html">DeviceHub</a>
 
-      <nav class="site-nav" aria-label="Основная навигация">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__text">Меню</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html">
-              Главная
-            </a>
+            <a class="site-nav__link" href="index.html">Главная</a>
           </li>
-
           <li class="site-nav__item">
-            <a class="site-nav__link" href="catalog.html">
-              Каталог
-            </a>
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
           </li>
-
           <li class="site-nav__item">
-            <a class="site-nav__link" href="product.html">
-              Товары
-            </a>
+            <a class="site-nav__link" href="product.html">О товарах</a>
           </li>
-
           <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="order.html">
-              Заказ
-            </a>
+            <a class="site-nav__link" href="order.html" aria-current="page">Заказ</a>
           </li>
-
           <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">
-              Контакты
-            </a>
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
           </li>
-
           <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">
-              Популярные товары
-            </a>
+            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html#feedback">Обратная связь</a>
           </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <span class="breadcrumbs__current">Оформление заказа</span>
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a></li>
+        <li class="breadcrumbs__item" aria-current="page">Оформление заказа</li>
+      </ol>
     </nav>
 
-    <section class="section">
-      <h1>Оформление заказа</h1>
+    <section class="section" aria-labelledby="order-title">
+      <h1 id="order-title">Оформление заказа</h1>
+      <p class="section__lead">Заполните форму, чтобы оставить заявку на выбранный товар. Поля, отмеченные <span class="order-form__required" aria-hidden="true">*</span><span class="visually-hidden">звёздочкой</span>, обязательны.</p>
 
-      <p>
-        Заполните форму, чтобы оставить заявку на выбранный товар.
-        Поля, отмеченные обязательными, необходимо заполнить.
-      </p>
-
-      <form
-        class="order-form order-form--page"
-        id="order-page-form"
-        action="#"
-        method="post"
-      >
+      <form class="order-form order-form--page" id="order-page-form" action="#" method="post" novalidate>
+        <fieldset class="order-form__fieldset">
+          <legend class="order-form__legend">Контактные данные</legend>
+          <div class="order-form__grid">
         <div class="order-form__field">
-          <label class="order-form__label" for="order-name">
-            Имя
-          </label>
-          <input
-            class="order-form__input"
-            id="order-name"
-            name="name"
-            type="text"
-            placeholder="Введите ваше имя"
-            minlength="2"
-            autocomplete="given-name"
-            required
-          >
+          <label class="order-form__label" for="order-name">Имя <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input class="order-form__input" id="order-name" name="name" type="text" minlength="2" autocomplete="given-name" required>
         </div>
-
         <div class="order-form__field">
-          <label class="order-form__label" for="order-email">
-            E-mail
-          </label>
-          <input
-            class="order-form__input"
-            id="order-email"
-            name="email"
-            type="email"
-            placeholder="example@mail.ru"
-            autocomplete="email"
-            required
-          >
+          <label class="order-form__label" for="order-email">E-mail <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input class="order-form__input" id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
         </div>
-
         <div class="order-form__field">
-          <label class="order-form__label" for="order-phone">
-            Телефон
-          </label>
-          <input
-            class="order-form__input"
-            id="order-phone"
-            name="phone"
-            type="tel"
-            inputmode="tel"
-            placeholder="+7 (900) 000-00-00"
-            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-            autocomplete="tel"
-            required
-          >
-          <small class="order-form__hint">
-            Формат: +7 (900) 000-00-00
-          </small>
+          <label class="order-form__label" for="order-phone">Телефон <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" autocomplete="tel" aria-describedby="order-phone-hint" required>
+          <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
         </div>
+          </div>
+        </fieldset>
 
+        <fieldset class="order-form__fieldset">
+          <legend class="order-form__legend">Заказ и доставка</legend>
+          <div class="order-form__grid">
         <div class="order-form__field">
-          <label class="order-form__label" for="order-product">
-            Товар
-          </label>
-          <select
-            class="order-form__select"
-            id="order-product"
-            name="product"
-            required
-          >
+          <label class="order-form__label" for="order-product">Товар <span class="order-form__required" aria-hidden="true">*</span></label>
+          <select class="order-form__select" id="order-product" name="product" required>
             <option value="">Выберите товар</option>
-            <option value="logitech-g-pro-x">
-              Logitech G Pro X — 12.899 руб.
-            </option>
-            <option value="fifine-am8">
-              Fifine AM8 — 4.799 руб.
-            </option>
-            <option value="fifine-am8t">
-              Fifine AM8T — 5.499 руб.
-            </option>
+            <option value="logitech-g-pro-x">Logitech G Pro X — 12&nbsp;899&nbsp;₽</option>
+            <option value="fifine-am8">Fifine AM8 — 4&nbsp;799&nbsp;₽</option>
+            <option value="fifine-am8t">Fifine AM8T — 5&nbsp;499&nbsp;₽</option>
           </select>
         </div>
-
         <div class="order-form__field">
-          <label class="order-form__label" for="order-quantity">
-            Количество
-          </label>
-          <input
-            class="order-form__input"
-            id="order-quantity"
-            name="quantity"
-            type="number"
-            min="1"
-            max="10"
-            value="1"
-            required
-          >
+          <label class="order-form__label" for="order-quantity">Количество <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input class="order-form__input" id="order-quantity" name="quantity" type="number" min="1" max="10" value="1" inputmode="numeric" required>
         </div>
-
         <div class="order-form__field">
-          <label class="order-form__label" for="order-delivery">
-            Способ получения
-          </label>
-          <select
-            class="order-form__select"
-            id="order-delivery"
-            name="delivery"
-            required
-          >
+          <label class="order-form__label" for="order-delivery">Способ получения <span class="order-form__required" aria-hidden="true">*</span></label>
+          <select class="order-form__select" id="order-delivery" name="delivery" required>
             <option value="">Выберите способ</option>
             <option value="pickup">Самовывоз</option>
             <option value="courier">Курьерская доставка</option>
           </select>
         </div>
-
         <div class="order-form__field">
-          <label class="order-form__label" for="order-address">
-            Адрес доставки
-          </label>
-          <input
-            class="order-form__input"
-            id="order-address"
-            name="address"
-            type="text"
-            placeholder="Город, улица, дом, квартира"
-            autocomplete="street-address"
-          >
+          <label class="order-form__label" for="order-address">Адрес доставки</label>
+          <input class="order-form__input" id="order-address" name="address" type="text" placeholder="Город, улица, дом, квартира" autocomplete="street-address">
         </div>
-
-        <div class="order-form__field">
-          <label class="order-form__label" for="order-comment">
-            Комментарий
-          </label>
-          <textarea
-            class="order-form__textarea"
-            id="order-comment"
-            name="comment"
-            rows="5"
-            placeholder="Укажите дополнительную информацию"
-          ></textarea>
+        <div class="order-form__field order-form__field--wide">
+          <label class="order-form__label" for="order-comment">Комментарий</label>
+          <textarea class="order-form__textarea" id="order-comment" name="comment" rows="5" placeholder="Укажите дополнительную информацию"></textarea>
         </div>
+          </div>
+        </fieldset>
 
         <div class="order-form__field order-form__field--checkbox">
           <label class="order-form__label order-form__label--checkbox" for="order-agreement">
-            <input
-              class="order-form__checkbox"
-              id="order-agreement"
-              name="agreement"
-              type="checkbox"
-              required
-            >
-            Я согласен на обработку данных
+            <input class="order-form__checkbox" id="order-agreement" name="agreement" type="checkbox" required>
+            <span>Я согласен на обработку персональных данных</span>
           </label>
         </div>
 
         <div class="order-form__actions">
-          <a class="button button--secondary" href="product.html">
-            Вернуться к товарам
-          </a>
-
-          <button class="button button--primary" type="submit">
-            Отправить заявку
-          </button>
+          <a class="button button--secondary" href="product.html">Вернуться к товарам</a>
+          <button class="button button--primary" type="submit">Отправить заявку</button>
         </div>
       </form>
+
+      <div class="success-message" id="order-success" role="status" tabindex="-1" hidden>
+        <h2>Заявка успешно отправлена!</h2>
+        <p>Спасибо за заказ. Мы свяжемся с вами для подтверждения.</p>
+        <a class="button button--primary" href="index.html">Вернуться на главную</a>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer__inner">
+      <nav aria-label="Навигация в подвале">
+        <ul class="site-footer__nav">
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="order.html">Оформить заказ</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
       <p>&copy; 2026 DeviceHub. Все права защищены.</p>
       <p>Дисциплина: Фронтенд и бэкенд разработка</p>
     </div>
   </footer>
-  <script src="js/main.js"></script>
 </body>
 </html>

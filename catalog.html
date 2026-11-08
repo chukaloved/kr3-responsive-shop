@@ -3,277 +3,207 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Каталог товаров учебного интернет-магазина."
-  >
-
-  <title>Каталог товаров — Учебный интернет-магазин</title>
-
+  <meta name="description" content="Каталог DeviceHub: игровые мыши и микрофоны с фильтром по категории и цене.">
+  <meta name="color-scheme" content="light dark">
+  <title>Каталог товаров — DeviceHub</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">
-        DeviceHub
-      </a>
+      <a class="site-header__logo" href="index.html">DeviceHub</a>
 
-      <nav class="site-nav" aria-label="Основная навигация">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__text">Меню</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-
           <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html">
-              Главная
-            </a>
+            <a class="site-nav__link" href="index.html">Главная</a>
           </li>
-
           <li class="site-nav__item">
-            <a
-              class="site-nav__link site-nav__link--active"
-              href="catalog.html"
-            >
-              Каталог
-            </a>
+            <a class="site-nav__link" href="catalog.html" aria-current="page">Каталог</a>
           </li>
-
           <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">
-              Контакты
-            </a>
+            <a class="site-nav__link" href="product.html">О товарах</a>
           </li>
-        <li class="site-nav__item">
-            <a class="site-nav__link" href="product.html">
-                О товарах
-             </a>
-        </li>
-
-        <li class="site-nav__item">
-            <a class="site-nav__link" href="order.html">
-                Заказ
-            </a>
-        </li>
           <li class="site-nav__item">
-            <a
-              class="site-nav__link"
-              href="index.html#advantages"
-            >
-              Преимущества
-            </a>
+            <a class="site-nav__link" href="order.html">Заказ</a>
           </li>
-
           <li class="site-nav__item">
-            <a
-              class="site-nav__link"
-              href="index.html#popular"
-            >
-              Популярные товары
-            </a>
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
           </li>
-
           <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html#feedback">
-              Обратная связь
-            </a>
+            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
           </li>
-
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html#feedback">Обратная связь</a>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <nav
-      class="breadcrumbs"
-      aria-label="Хлебные крошки"
-    >
-      <a
-        class="breadcrumbs__link"
-        href="index.html"
-      >
-        Главная
-      </a>
-
-      <span class="breadcrumbs__current">
-        Каталог
-      </span>
+  <main id="main" tabindex="-1">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a></li>
+        <li class="breadcrumbs__item" aria-current="page">Каталог</li>
+      </ol>
     </nav>
 
     <section class="section">
       <h1>Каталог товаров</h1>
-
-      <p>
-        На этой странице представлен учебный каталог товаров.
-        В дальнейшем здесь будут добавлены фильтры, сортировка и более
-        подробные карточки.
-      </p>
+      <p class="section__lead">Игровые мыши и микрофоны для стримов, записи и работы. Используйте фильтр, чтобы подобрать товар по категории и цене.</p>
     </section>
 
-    <section class="catalog-layout">
+    <div class="catalog-layout">
+      <details class="catalog-filters" id="catalog-filters" open>
+        <summary class="catalog-filters__summary">Фильтры</summary>
 
-      <aside class="catalog-filters">
-        <h2>Фильтры</h2>
+        <div class="catalog-filters__body">
+          <form class="filters-form" action="#" method="get" aria-label="Фильтр товаров">
+            <fieldset>
+              <legend>Категория</legend>
+              <label class="filters-form__option"><input type="checkbox" name="category" value="all"> Все товары</label>
+              <label class="filters-form__option"><input type="checkbox" name="category" value="mouse"> Мыши</label>
+              <label class="filters-form__option"><input type="checkbox" name="category" value="microphone"> Микрофоны</label>
+              <label class="filters-form__option"><input type="checkbox" name="category" value="popular"> Популярные</label>
+            </fieldset>
 
-        <form
-          class="filters-form"
-          action="#"
-          method="get"
-        >
-          <fieldset>
-            <legend>Категория</legend>
+            <fieldset>
+              <legend>Цена, ₽</legend>
+              <div class="filters-form__price">
+                <div>
+                  <label for="price-from">От</label>
+                  <input id="price-from" name="price-from" type="number" min="0" step="100" inputmode="numeric" placeholder="0">
+                </div>
+                <div>
+                  <label for="price-to">До</label>
+                  <input id="price-to" name="price-to" type="number" min="0" step="100" inputmode="numeric" placeholder="15000">
+                </div>
+              </div>
+            </fieldset>
 
-            <label>
-              <input
-                type="checkbox"
-                name="category"
-                value="all"
-              >
-              Все товары
-            </label>
-
-            <label>
-              <input
-                type="checkbox"
-                name="category"
-                value="popular"
-              >
-              Популярные
-            </label>
-
-            <label>
-              <input
-                type="checkbox"
-                name="category"
-                value="new"
-              >
-              Новинки
-            </label>
-          </fieldset>
-
-          <fieldset>
-            <legend>Цена</legend>
-
-            <label for="price-from">
-              От
-            </label>
-
-            <input
-              id="price-from"
-              name="price-from"
-              type="number"
-              min="0"
-              placeholder="0"
-            >
-
-            <label for="price-to">
-              До
-            </label>
-
-            <input
-              id="price-to"
-              name="price-to"
-              type="number"
-              min="0"
-              placeholder="5000"
-            >
-          </fieldset>
-
-          <button
-            class="button button--primary"
-            type="submit"
-          >
-            Применить
-          </button>
-        </form>
-      </aside>
-
-      <section class="catalog-products">
-        <h2>Список товаров</h2>
-
-        <div class="products-grid">
-
-          <article class="product-card">
-            <img
-            class="product-card__image"
-            src="images/logitech g pro x.webp"
-            alt="Logitech G Pro X"
-            >
-            <h3 class="product-card__title">Мышь компьютерная ogitech G Pro X</h3>
-
-          <p class="product-card__description">
-            Эргономичная игровая мышь с точным сенсором и удобным управлением.
-          </p>
-
-          <p class="product-card__price">
-            Цена: 12.899 руб.
-          </p>
-
-            <a
-              class="button button--primary product-card__button"
-              href="product.html"
-            >
-              Подробнее
-            </a>
-          </article>
-
-          <article class="product-card">
-            <img
-            class="product-card__image"
-            src="images/fifine am8.webp"
-            alt="Fifine AM8"
-            >
-            <h3 class="product-card__title">Микрофон Fifine AM8</h3>
-
-          <p class="product-card__description">
-            Универсальный USB/XLR-микрофон с чистым звучанием для общения, стримов и записи
-          </p>
-
-          <p class="product-card__price">
-            Цена: 4.799 руб.
-          </p>
-
-            <a
-              class="button button--primary product-card__button"
-              href="product.html"
-            >
-              Подробнее
-            </a>
-          </article>
-
-          <article class="product-card">
-            <img
-            class="product-card__image"
-            src="images/fifine am8t.webp"
-            alt="Fifine AM8T"
-            >
-            <h3 class="product-card__title">Микрофон Fifine AM8T</h3>
-
-          <p class="product-card__description">
-            Настольный микрофон на стойке с удобной регулировкой положения и качественным звучанием.
-          </p>
-
-          <p class="product-card__price">
-            Цена: 5.499 руб.
-          </p>
-
-            <a
-              class="button button--primary product-card__button"
-              href="product.html"
-            >
-              Подробнее
-            </a>
-          </article>
-
+            <button class="button button--primary" type="submit">Применить</button>
+          </form>
         </div>
-      </section>
+      </details>
 
-    </section>
+      <section class="catalog-products" aria-labelledby="catalog-list-title">
+        <h2 id="catalog-list-title">Список товаров</h2>
+        <ul class="products-grid">
+          <li class="products-grid__item">
+            <article class="product-card product-card--featured" aria-labelledby="card-catalog-logitech-g-pro-x">
+              <img
+                class="product-card__image"
+                src="images/logitech-g-pro-x-640.webp"
+                srcset="images/logitech-g-pro-x-480.webp 480w, images/logitech-g-pro-x-640.webp 640w, images/logitech-g-pro-x-960.webp 960w"
+                sizes="(min-width: 1280px) 260px, (min-width: 1024px) 34vw, (min-width: 768px) 45vw, 100vw"
+                width="640"
+                height="640"
+                alt="Игровая мышь Logitech G Pro X чёрного цвета, вид сверху"
+                loading="lazy"
+                decoding="async"
+              >
+              <h3 class="product-card__title" id="card-catalog-logitech-g-pro-x">Мышь компьютерная Logitech G Pro X</h3>
+              <p class="product-card__description">Эргономичная игровая мышь с точным сенсором и удобным управлением.</p>
+              <div class="product-card__footer">
+                <p class="product-card__price">12&nbsp;899&nbsp;₽</p>
+                <a
+                class="button button--primary product-card__button"
+                href="product.html#logitech-g-pro-x"
+                aria-label="Подробнее о Logitech G Pro X"
+              >
+                Подробнее
+              </a>
+              </div>
+            </article>
+          </li>
+          <li class="products-grid__item">
+            <article class="product-card" aria-labelledby="card-catalog-fifine-am8">
+              <img
+                class="product-card__image"
+                src="images/fifine-am8-640.webp"
+                srcset="images/fifine-am8-480.webp 480w, images/fifine-am8-640.webp 640w, images/fifine-am8-960.webp 960w"
+                sizes="(min-width: 1280px) 260px, (min-width: 1024px) 34vw, (min-width: 768px) 45vw, 100vw"
+                width="640"
+                height="1129"
+                alt="Динамический микрофон Fifine AM8 на подставке"
+                loading="lazy"
+                decoding="async"
+              >
+              <h3 class="product-card__title" id="card-catalog-fifine-am8">Микрофон Fifine AM8</h3>
+              <p class="product-card__description">Универсальный USB/XLR-микрофон с чистым звучанием для общения, стримов и записи.</p>
+              <div class="product-card__footer">
+                <p class="product-card__price">4&nbsp;799&nbsp;₽</p>
+                <a
+                class="button button--primary product-card__button"
+                href="product.html#fifine-am8"
+                aria-label="Подробнее о Fifine AM8"
+              >
+                Подробнее
+              </a>
+              </div>
+            </article>
+          </li>
+          <li class="products-grid__item">
+            <article class="product-card" aria-labelledby="card-catalog-fifine-am8t">
+              <img
+                class="product-card__image"
+                src="images/fifine-am8t-640.webp"
+                srcset="images/fifine-am8t-480.webp 480w, images/fifine-am8t-640.webp 640w, images/fifine-am8t-960.webp 960w"
+                sizes="(min-width: 1280px) 260px, (min-width: 1024px) 34vw, (min-width: 768px) 45vw, 100vw"
+                width="640"
+                height="640"
+                alt="Микрофон Fifine AM8T на регулируемой настольной стойке"
+                loading="lazy"
+                decoding="async"
+              >
+              <h3 class="product-card__title" id="card-catalog-fifine-am8t">Микрофон Fifine AM8T</h3>
+              <p class="product-card__description">Настольный микрофон на стойке с удобной регулировкой положения и качественным звучанием.</p>
+              <div class="product-card__footer">
+                <p class="product-card__price">5&nbsp;499&nbsp;₽</p>
+                <a
+                class="button button--primary product-card__button"
+                href="product.html#fifine-am8t"
+                aria-label="Подробнее о Fifine AM8T"
+              >
+                Подробнее
+              </a>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer__inner">
+      <nav aria-label="Навигация в подвале">
+        <ul class="site-footer__nav">
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="order.html">Оформить заказ</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
       <p>&copy; 2026 DeviceHub. Все права защищены.</p>
       <p>Дисциплина: Фронтенд и бэкенд разработка</p>
     </div>
