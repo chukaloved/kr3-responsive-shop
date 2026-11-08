@@ -3,361 +3,267 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta
-    name="description"
-    content="Учебный интернет-магазин с каталогом товаров и формой обратной связи."
-  >
-  <title>Учебный интернет-магазин</title>
+  <meta name="description" content="DeviceHub — интернет-магазин компьютерной периферии: игровые мыши и микрофоны с доставкой по Москве.">
+  <meta name="color-scheme" content="light dark">
+  <title>DeviceHub — компьютерная периферия</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>document.documentElement.classList.add('js');</script>
   <script src="js/main.js" defer></script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">DeviceHub</a>
 
-      <nav class="site-nav" aria-label="Основная навигация">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__text">Меню</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item">
-            <a
-              class="site-nav__link site-nav__link--active"
-              href="index.html"
-            >
-              Главная
-            </a>
-          </li>
-
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="catalog.html">
-              Каталог
-            </a>
-          </li>
-
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">
-              Контакты
-            </a>
+            <a class="site-nav__link" href="index.html" aria-current="page">Главная</a>
           </li>
           <li class="site-nav__item">
-            <a class="site-nav__link" href="product.html">
-                О товарах
-             </a>
-        </li>
-
-        <li class="site-nav__item">
-            <a class="site-nav__link" href="order.html">
-                Заказ
-            </a>
-        </li>
-
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#advantages">
-              Преимущества
-            </a>
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
           </li>
-
           <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">
-              Популярные товары
-            </a>
+            <a class="site-nav__link" href="product.html">О товарах</a>
           </li>
-
           <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html#feedback">
-              Обратная связь
-            </a>
+            <a class="site-nav__link" href="order.html">Заказ</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html#feedback">Обратная связь</a>
           </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>DeviceHub</h1>
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <picture class="hero__media">
+        <source media="(min-width: 1280px)" srcset="images/hero-1792.webp">
+        <source media="(min-width: 768px)" srcset="images/hero-1280.webp">
+        <img
+          src="images/hero-768.webp"
+          width="768"
+          height="439"
+          alt=""
+          fetchpriority="high"
+        >
+      </picture>
 
-      <p>
-        Компьютерная периферия и оборудование
-      </p>
-
-      <a class="button button--primary" href="#popular">
-        Перейти к товарам
-      </a>
-    </section>
-
-    <section class="section" id="advantages">
-      <h2>Преимущества проекта</h2>
-
-      <ul class="advantages-list">
-        <li>понятная HTML-структура;</li>
-        <li>семантические блоки страницы;</li>
-        <li>подключение внешнего CSS-файла;</li>
-        <li>подготовка к разработке многостраничного сайта.</li>
-      </ul>
-    </section>
-
-    <section class="section" id="popular">
-      <h2>Популярные товары</h2>
-
-      <div class="products-grid">
-
-        <article class="product-card product-card--featured">
-          <img
-            class="product-card__image"
-            src="images/logitech g pro x.webp"
-            alt="Logitech G Pro X"
-            >
-            <h3 class="product-card__title">Мышь компьютерная ogitech G Pro X</h3>
-
-          <p class="product-card__description">
-            Эргономичная игровая мышь с точным сенсором и удобным управлением.
-          </p>
-
-          <p class="product-card__price">
-            Цена: 12.899 руб.
-          </p>
-
-          <button
-            class="button button--primary product-card__button"
-            type="button"
-            data-product="Товар 1"
-          >
-            Заказать
-          </button>
-        </article>
-
-        <article class="product-card product-card--featured">
-          <img
-            class="product-card__image"
-            src="images/fifine am8.webp"
-            alt="Fifine AM8"
-            >
-            <h3 class="product-card__title">Микрофон Fifine AM8</h3>
-
-          <p class="product-card__description">
-            Универсальный USB/XLR-микрофон с чистым звучанием для общения, стримов и записи
-          </p>
-
-          <p class="product-card__price">
-            Цена: 4.799 руб.
-          </p>
-
-          <button
-            class="button button--primary product-card__button"
-            type="button"
-            data-product="Товар 2"
-          >
-            Заказать
-          </button>
-        </article>
-
-        <article class="product-card product-card--featured">
-          <img
-            class="product-card__image"
-            src="images/fifine am8t.webp"
-            alt="Fifine AM8T"
-            >
-            <h3 class="product-card__title">Микрофон Fifine AM8T</h3>
-
-          <p class="product-card__description">
-            Настольный микрофон на стойке с удобной регулировкой положения и качественным звучанием.
-          </p>
-
-          <p class="product-card__price">
-            Цена: 5.499 руб.
-          </p>
-
-          <button
-            class="button button--primary product-card__button"
-            type="button"
-            data-product="Товар 3"
-          >
-            Заказать
-          </button>
-        </article>
-
+      <div class="hero__inner">
+        <h1 class="hero__title" id="hero-title">DeviceHub</h1>
+        <p class="hero__text">Компьютерная периферия и оборудование для игр, стримов и работы</p>
+        <a class="button button--primary hero__button" href="#popular">Перейти к товарам</a>
       </div>
     </section>
 
-    <aside class="aside-info">
-      <h2>Информация для студентов</h2>
+    <section class="section" id="advantages" aria-labelledby="advantages-title">
+      <h2 id="advantages-title">Преимущества DeviceHub</h2>
+      <ul class="advantages">
+        <li class="advantages__item">
+          <h3 class="advantages__title">Оригинальная техника</h3>
+          <p class="advantages__text">Только проверенная периферия от официальных поставщиков.</p>
+        </li>
+        <li class="advantages__item">
+          <h3 class="advantages__title">Гарантия 12 месяцев</h3>
+          <p class="advantages__text">Обменяем или отремонтируем устройство при заводском браке.</p>
+        </li>
+        <li class="advantages__item">
+          <h3 class="advantages__title">Доставка по Москве</h3>
+          <p class="advantages__text">Курьер привезёт заказ на следующий день или забирайте сами.</p>
+        </li>
+        <li class="advantages__item">
+          <h3 class="advantages__title">Помощь с выбором</h3>
+          <p class="advantages__text">Подскажем, какая мышь или микрофон подойдут под ваши задачи.</p>
+        </li>
+      </ul>
+    </section>
 
-      <p>
-        На следующих практических занятиях этот проект будет расширяться:
-        появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
-        БЭМ-структура и адаптивная версия сайта.
-      </p>
-    </aside>
+    <section class="section" id="popular" aria-labelledby="popular-title">
+      <h2 id="popular-title">Популярные товары</h2>
+      <ul class="products-grid">
+          <li class="products-grid__item">
+            <article class="product-card product-card--featured" aria-labelledby="card-order-logitech-g-pro-x">
+              <img
+                class="product-card__image"
+                src="images/logitech-g-pro-x-640.webp"
+                srcset="images/logitech-g-pro-x-480.webp 480w, images/logitech-g-pro-x-640.webp 640w, images/logitech-g-pro-x-960.webp 960w"
+                sizes="(min-width: 1100px) 340px, (min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
+                width="640"
+                height="640"
+                alt="Игровая мышь Logitech G Pro X чёрного цвета, вид сверху"
+                loading="lazy"
+                decoding="async"
+              >
+              <h3 class="product-card__title" id="card-order-logitech-g-pro-x">Мышь компьютерная Logitech G Pro X</h3>
+              <p class="product-card__description">Эргономичная игровая мышь с точным сенсором и удобным управлением.</p>
+              <div class="product-card__footer">
+                <p class="product-card__price">12&nbsp;899&nbsp;₽</p>
+                <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-product="Logitech G Pro X"
+                aria-label="Заказать Logitech G Pro X"
+              >
+                Заказать
+              </button>
+              </div>
+            </article>
+          </li>
+          <li class="products-grid__item">
+            <article class="product-card" aria-labelledby="card-order-fifine-am8">
+              <img
+                class="product-card__image"
+                src="images/fifine-am8-640.webp"
+                srcset="images/fifine-am8-480.webp 480w, images/fifine-am8-640.webp 640w, images/fifine-am8-960.webp 960w"
+                sizes="(min-width: 1100px) 340px, (min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
+                width="640"
+                height="1129"
+                alt="Динамический микрофон Fifine AM8 на подставке"
+                loading="lazy"
+                decoding="async"
+              >
+              <h3 class="product-card__title" id="card-order-fifine-am8">Микрофон Fifine AM8</h3>
+              <p class="product-card__description">Универсальный USB/XLR-микрофон с чистым звучанием для общения, стримов и записи.</p>
+              <div class="product-card__footer">
+                <p class="product-card__price">4&nbsp;799&nbsp;₽</p>
+                <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-product="Fifine AM8"
+                aria-label="Заказать Fifine AM8"
+              >
+                Заказать
+              </button>
+              </div>
+            </article>
+          </li>
+          <li class="products-grid__item">
+            <article class="product-card" aria-labelledby="card-order-fifine-am8t">
+              <img
+                class="product-card__image"
+                src="images/fifine-am8t-640.webp"
+                srcset="images/fifine-am8t-480.webp 480w, images/fifine-am8t-640.webp 640w, images/fifine-am8t-960.webp 960w"
+                sizes="(min-width: 1100px) 340px, (min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
+                width="640"
+                height="640"
+                alt="Микрофон Fifine AM8T на регулируемой настольной стойке"
+                loading="lazy"
+                decoding="async"
+              >
+              <h3 class="product-card__title" id="card-order-fifine-am8t">Микрофон Fifine AM8T</h3>
+              <p class="product-card__description">Настольный микрофон на стойке с удобной регулировкой положения и качественным звучанием.</p>
+              <div class="product-card__footer">
+                <p class="product-card__price">5&nbsp;499&nbsp;₽</p>
+                <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-product="Fifine AM8T"
+                aria-label="Заказать Fifine AM8T"
+              >
+                Заказать
+              </button>
+              </div>
+            </article>
+          </li>
+      </ul>
+    </section>
+
+    <p class="success-message" id="success-message" role="status" hidden>
+      Заявка успешно отправлена! Мы свяжемся с вами для подтверждения.
+    </p>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer__inner">
+      <nav aria-label="Навигация в подвале">
+        <ul class="site-footer__nav">
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="order.html">Оформить заказ</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
       <p>&copy; 2026 DeviceHub. Все права защищены.</p>
       <p>Дисциплина: Фронтенд и бэкенд разработка</p>
     </div>
   </footer>
 
-  <dialog
-    class="order-dialog"
-    id="order-dialog"
-    aria-labelledby="order-dialog-title"
-  >
-    <h2 class="order-dialog__title" id="order-dialog-title">
-      Оформление заявки
-    </h2>
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <div class="order-dialog__header">
+      <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+      <button class="order-dialog__close" type="button" data-close-dialog aria-label="Закрыть окно заявки">&times;</button>
+    </div>
+    <p class="order-dialog__product" id="order-dialog-product" aria-live="polite"></p>
 
-    <form
-      class="order-form"
-      id="order-form"
-      action="#"
-      method="post"
-      novalidate
-    >
-      <input
-        id="selected-product"
-        name="selected-product"
-        type="hidden"
-      >
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-name">
-          Имя
-        </label>
-
-        <input
-          class="order-form__input"
-          id="order-name"
-          name="name"
-          type="text"
-          placeholder="Введите ваше имя"
-          minlength="2"
-          autocomplete="given-name"
-          required
-        >
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <input id="selected-product" name="selected-product" type="hidden">
+      <div class="order-form__grid">
+        <div class="order-form__field">
+          <label class="order-form__label" for="dlg-name">Имя <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input class="order-form__input" id="dlg-name" name="name" type="text" minlength="2" autocomplete="given-name" required>
+        </div>
+        <div class="order-form__field">
+          <label class="order-form__label" for="dlg-email">E-mail <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input class="order-form__input" id="dlg-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
+        </div>
+        <div class="order-form__field">
+          <label class="order-form__label" for="dlg-phone">Телефон <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input class="order-form__input" id="dlg-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" autocomplete="tel" aria-describedby="dlg-phone-hint" required>
+          <small class="order-form__hint" id="dlg-phone-hint">Формат: +7 (900) 000-00-00</small>
+        </div>
+        <div class="order-form__field">
+          <label class="order-form__label" for="dlg-date">Дата связи</label>
+          <input class="order-form__input" id="dlg-date" name="date" type="date">
+        </div>
+        <div class="order-form__field order-form__field--wide">
+          <label class="order-form__label" for="dlg-topic">Тема заявки <span class="order-form__required" aria-hidden="true">*</span></label>
+          <select class="order-form__select" id="dlg-topic" name="topic" required>
+            <option value="">Выберите тему</option>
+            <option value="product">Заказ товара</option>
+            <option value="consultation">Консультация</option>
+            <option value="delivery">Доставка</option>
+          </select>
+        </div>
+        <div class="order-form__field order-form__field--wide">
+          <label class="order-form__label" for="dlg-comment">Комментарий</label>
+          <textarea class="order-form__textarea" id="dlg-comment" name="comment" rows="4" placeholder="Укажите дополнительную информацию"></textarea>
+        </div>
+        <div class="order-form__field order-form__field--checkbox order-form__field--wide">
+          <label class="order-form__label order-form__label--checkbox" for="dlg-agreement">
+            <input class="order-form__checkbox" id="dlg-agreement" name="agreement" type="checkbox" required>
+            <span>Я согласен на обработку персональных данных</span>
+          </label>
+        </div>
       </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-email">
-          E-mail
-        </label>
-
-        <input
-          class="order-form__input"
-          id="order-email"
-          name="email"
-          type="email"
-          placeholder="example@mail.ru"
-          autocomplete="email"
-          required
-        >
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-phone">
-          Телефон
-        </label>
-
-        <input
-          class="order-form__input"
-          id="order-phone"
-          name="phone"
-          type="tel"
-          inputmode="tel"
-          placeholder="+7 (900) 000-00-00"
-          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-          required
-        >
-
-        <small class="order-form__hint">
-          Формат: +7 (900) 000-00-00
-        </small>
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-date">
-          Дата связи
-        </label>
-
-        <input
-          class="order-form__input"
-          id="order-date"
-          name="date"
-          type="date"
-        >
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-topic">
-          Тема заявки
-        </label>
-
-        <select
-          class="order-form__select"
-          id="order-topic"
-          name="topic"
-          required
-        >
-          <option value="">Выберите тему</option>
-          <option value="product">Заказ товара</option>
-          <option value="consultation">Консультация</option>
-          <option value="delivery">Доставка</option>
-        </select>
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-comment">
-          Комментарий
-        </label>
-
-        <textarea
-          class="order-form__textarea"
-          id="order-comment"
-          name="comment"
-          rows="4"
-          placeholder="Укажите дополнительную информацию"
-        ></textarea>
-      </div>
-
-      <div class="order-form__field order-form__field--checkbox">
-        <label class="order-form__label order-form__label--checkbox">
-          <input
-            class="order-form__checkbox"
-            id="order-agreement"
-            name="agreement"
-            type="checkbox"
-            required
-          >
-
-          Я согласен на обработку данных
-        </label>
-      </div>
-
       <div class="order-form__actions">
-        <button
-          class="button button--secondary"
-          type="button"
-          id="close-order-dialog"
-        >
-          Закрыть
-        </button>
-
-        <button
-          class="button button--primary"
-          type="submit"
-        >
-          Отправить заявку
-        </button>
+        <button class="button button--secondary" type="button" data-close-dialog>Закрыть</button>
+        <button class="button button--primary" type="submit">Отправить заявку</button>
       </div>
     </form>
   </dialog>
-
-  <p
-    class="success-message"
-    id="success-message"
-    hidden
-  >
-    Форма успешно отправлена!
-  </p>
 </body>
 </html>

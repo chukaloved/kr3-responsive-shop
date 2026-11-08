@@ -3,149 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Контактная информация учебного интернет-магазина."
-  >
-
-  <title>Контакты — Учебный интернет-магазин</title>
-
+  <meta name="description" content="Контакты интернет-магазина DeviceHub и форма обратной связи.">
+  <meta name="color-scheme" content="light dark">
+  <title>Контакты — DeviceHub</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">
-        DeviceHub
-      </a>
+      <a class="site-header__logo" href="index.html">DeviceHub</a>
 
-      <nav class="site-nav" aria-label="Основная навигация">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__text">Меню</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-
           <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html">
-              Главная
-            </a>
+            <a class="site-nav__link" href="index.html">Главная</a>
           </li>
-
           <li class="site-nav__item">
-            <a class="site-nav__link" href="catalog.html">
-              Каталог
-            </a>
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
           </li>
-
           <li class="site-nav__item">
-            <a
-              class="site-nav__link site-nav__link--active"
-              href="contacts.html"
-            >
-              Контакты
-            </a>
+            <a class="site-nav__link" href="product.html">О товарах</a>
           </li>
-        <li class="site-nav__item">
-            <a class="site-nav__link" href="product.html">
-                О товарах
-             </a>
-        </li>
-
-        <li class="site-nav__item">
-            <a class="site-nav__link" href="order.html">
-                Заказ
-            </a>
-        </li>
           <li class="site-nav__item">
-            <a
-              class="site-nav__link"
-              href="index.html#advantages"
-            >
-              Преимущества
-            </a>
+            <a class="site-nav__link" href="order.html">Заказ</a>
           </li>
-
           <li class="site-nav__item">
-            <a
-              class="site-nav__link"
-              href="index.html#popular"
-            >
-              Популярные товары
-            </a>
+            <a class="site-nav__link" href="contacts.html" aria-current="page">Контакты</a>
           </li>
-
           <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html#feedback">
-              Обратная связь
-            </a>
+            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
           </li>
-
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html#feedback">Обратная связь</a>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <nav
-      class="breadcrumbs"
-      aria-label="Хлебные крошки"
-    >
-      <a
-        class="breadcrumbs__link"
-        href="index.html"
-      >
-        Главная
-      </a>
-
-      <span class="breadcrumbs__current">
-        Контакты
-      </span>
+  <main id="main" tabindex="-1">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a></li>
+        <li class="breadcrumbs__item" aria-current="page">Контакты</li>
+      </ol>
     </nav>
 
     <section class="section">
       <h1>Контакты</h1>
-
-      <p>
-        Здесь размещается контактная информация учебного
-        интернет-магазина.
-      </p>
-
-      <ul>
-        <li>
-          Телефон: +7 (900) 000-00-00
-        </li>
-
-        <li>
-          E-mail: info@example.com
-        </li>
-
-        <li>
-          Адрес: г. Москва, учебный проект
-        </li>
-      </ul>
+      <p class="section__lead">Свяжитесь с нами удобным способом или оставьте сообщение через форму обратной связи.</p>
     </section>
 
-    <section
-      class="section"
-      id="feedback"
-    >
-      <h2>Обратная связь</h2>
+    <div class="contacts-layout">
+      <section class="contacts-card" aria-labelledby="contacts-info-title">
+        <h2 id="contacts-info-title">Как с нами связаться</h2>
+        <dl class="contacts-list">
+          <div>
+            <dt class="contacts-list__term">Телефон</dt>
+            <dd class="contacts-list__value"><a href="tel:+79000000000">+7 (900) 000-00-00</a></dd>
+          </div>
+          <div>
+            <dt class="contacts-list__term">E-mail</dt>
+            <dd class="contacts-list__value"><a href="mailto:info@example.com">info@example.com</a></dd>
+          </div>
+          <div>
+            <dt class="contacts-list__term">Адрес</dt>
+            <dd class="contacts-list__value">г. Москва, учебный проект</dd>
+          </div>
+          <div>
+            <dt class="contacts-list__term">Режим работы</dt>
+            <dd class="contacts-list__value">Пн–Пт 10:00–20:00, Сб 11:00–18:00</dd>
+          </div>
+        </dl>
+      </section>
 
-      <p>
-        Для отправки заявки используйте форму
-        в модальном окне на главной странице.
-      </p>
-
-      <a
-        class="button button--primary"
-        href="index.html#popular"
-      >
-        Перейти к товарам
-      </a>
-    </section>
+      <section class="contacts-card" id="feedback" aria-labelledby="feedback-title">
+        <h2 id="feedback-title">Обратная связь</h2>
+        <form class="order-form" id="feedback-form" action="#" method="post" novalidate>
+          <div class="order-form__grid">
+        <div class="order-form__field">
+          <label class="order-form__label" for="fb-name">Имя <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input class="order-form__input" id="fb-name" name="name" type="text" minlength="2" autocomplete="name" required>
+        </div>
+        <div class="order-form__field">
+          <label class="order-form__label" for="fb-email">E-mail <span class="order-form__required" aria-hidden="true">*</span></label>
+          <input class="order-form__input" id="fb-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
+        </div>
+        <div class="order-form__field order-form__field--wide">
+          <label class="order-form__label" for="fb-subject">Тема обращения <span class="order-form__required" aria-hidden="true">*</span></label>
+          <select class="order-form__select" id="fb-subject" name="subject" required>
+            <option value="">Выберите тему</option>
+            <option value="question">Вопрос о товаре</option>
+            <option value="order">Статус заказа</option>
+            <option value="warranty">Гарантия и возврат</option>
+            <option value="other">Другое</option>
+          </select>
+        </div>
+        <div class="order-form__field order-form__field--wide">
+          <label class="order-form__label" for="fb-message">Сообщение <span class="order-form__required" aria-hidden="true">*</span></label>
+          <textarea class="order-form__textarea" id="fb-message" name="message" rows="5" minlength="10" required></textarea>
+        </div>
+          </div>
+          <div class="order-form__field order-form__field--checkbox">
+            <label class="order-form__label order-form__label--checkbox" for="fb-agreement">
+              <input class="order-form__checkbox" id="fb-agreement" name="agreement" type="checkbox" required>
+              <span>Я согласен на обработку персональных данных</span>
+            </label>
+          </div>
+          <div class="order-form__actions">
+            <button class="button button--primary" type="submit">Отправить сообщение</button>
+          </div>
+        </form>
+        <p class="success-message" id="feedback-success" role="status" tabindex="-1" hidden>
+          Сообщение отправлено! Мы ответим в течение рабочего дня.
+        </p>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer__inner">
+      <nav aria-label="Навигация в подвале">
+        <ul class="site-footer__nav">
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="order.html">Оформить заказ</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
       <p>&copy; 2026 DeviceHub. Все права защищены.</p>
       <p>Дисциплина: Фронтенд и бэкенд разработка</p>
     </div>
