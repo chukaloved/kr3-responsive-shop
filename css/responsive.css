@@ -1,14 +1,4 @@
-/* =========================================================
-   responsive.css — адаптивные правила DeviceHub
-   Подход Mobile First: базовые стили (style.css) описывают
-   мобильный экран, здесь они расширяются через min-width.
 
-   Контрольные точки:
-     480px  — крупный смартфон (430px+)
-     768px  — планшет
-     1024px — небольшой desktop
-     1280px — широкий desktop (1440px)
-   ========================================================= */
 
 /* ===============================
    480px+ — крупный смартфон
@@ -54,7 +44,7 @@
     background: linear-gradient(90deg, rgba(0, 1, 13, 0.85) 0%, rgba(0, 1, 13, 0.55) 55%, rgba(64, 36, 26, 0.25) 100%);
   }
 
-  /* Сетка карточек: 2 колонки */
+
   .products-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -63,14 +53,14 @@
     padding: var(--space-lg);
   }
 
-  /* Страница товара: фото слева, описание справа */
+
   .product-details__card {
     grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
     gap: var(--space-xl);
     padding: var(--space-lg);
   }
 
-  /* Формы: две колонки, широкие поля на всю строку */
+
   .order-form--page,
   .order-form--card {
     padding: var(--space-lg);
@@ -90,7 +80,7 @@
     padding: var(--space-lg);
   }
 
-  /* Фильтр каталога: поля в две колонки */
+ 
   .filters-form {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
@@ -102,7 +92,7 @@
     width: auto;
   }
 
-  /* Контакты: информация и форма рядом */
+ 
   .contacts-layout {
     grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
     align-items: start;
@@ -112,7 +102,7 @@
     padding: var(--space-lg);
   }
 
-  /* Подвал: в строку */
+
   .site-footer__inner {
     flex-direction: row;
     flex-wrap: wrap;
@@ -134,7 +124,7 @@
     --header-offset: 80px;
   }
 
-  /* Навигация: бургер скрыт, меню в одну строку */
+ 
   .js .nav-toggle {
     display: none;
   }
@@ -175,14 +165,14 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  /* Каталог: фильтр слева, товары справа */
+  
   .catalog-layout {
     grid-template-columns: 260px minmax(0, 1fr);
     grid-template-areas: "filters products";
     align-items: start;
   }
 
-  /* Фильтр «липнет» при прокрутке длинного каталога */
+
   .catalog-filters {
     position: sticky;
     top: calc(var(--header-offset) + var(--space-md));
@@ -196,7 +186,7 @@
     width: 100%;
   }
 
-  /* В каталоге справа меньше места — 2 колонки, на 1280+ снова 3 */
+
   .catalog-products .products-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
